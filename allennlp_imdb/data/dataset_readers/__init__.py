@@ -1,1 +1,0 @@
-from allennlp_imdb.data.dataset_readers.imdb import ImdbDatasetReader

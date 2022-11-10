@@ -1,3 +1,8 @@
 *.pt*
 *.json
 *.pyc
+*events.out.tfevents*
+*wandb/run*
+*wandb/debug*
+*wandb/latest*
+*disrpt_alln/3_from_scratch/wandb/*

@@ -1,6 +1,7 @@
 *.pt*
 *.json
 *.pyc
+*.bin
 *events.out.tfevents*
 *wandb/run*
 *wandb/debug*

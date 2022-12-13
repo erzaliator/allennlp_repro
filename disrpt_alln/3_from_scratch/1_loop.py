@@ -15,6 +15,7 @@ device = torch.device('cuda:0')
 
 SEED = 42
 lm_list = arg1.split()
+# deepset/gbert-base deepset/gbert-large deepset/gelectra-base deepset/gelectra-large deepset/gelectra-base-generator deepset/gelectra-large-generator
 # lm_list = ['bert-base-german-cased', 'deepset/gbert-base', 'deepset/gbert-large', 'deepset/gelectra-base', 'deepset/gelectra-large', 'deepset/gelectra-base-generator', 'deepset/gelectra-large-generator']
 
 for bert_model in lm_list:
@@ -24,7 +25,7 @@ for bert_model in lm_list:
     experiment_name = 'ModelBases'
     lr = 'lr=AdafactorDefault'
     model_name = 'plm='+BERT_MODEL
-    additional_info = 'Info=v3_lrtest2'
+    additional_info = 'Info=v3_lrtest1'
     name = '_'.join([experiment_name, lr, model_name, additional_info])
 
     MODEL_DIR = name
@@ -70,11 +71,15 @@ for bert_model in lm_list:
     from transformers import AutoModelForSequenceClassification
     from transformers.optimization import Adafactor, AdafactorSchedule, AdamW
     from torch import optim
+    # import pytorch_lightning_spells as pls
+
 
     model = AutoModelForSequenceClassification.from_pretrained(BERT_MODEL, num_labels=len(list(set(train_dataset['label'])|set(test_dataset['label'])|set(valid_dataset['label']))))
-    optimizer = Adafactor(model.parameters(), scale_parameter=True, relative_step=True, warmup_init=True, lr=None)
-    lr_scheduler = AdafactorSchedule(optimizer)
-
+    # optimizer = Adafactor(model.parameters(), scale_parameter=True, relative_step=True, warmup_init=True, lr=None)
+    # optimizer = Adafactor(model.parameters())#, relative_step=False, warmup_init=False, lr=1e-5, scale_parameter=False)
+    # print(dir(optimizer))
+    # lr_scheduler = (optimizer)
+    
 
 
 
@@ -121,7 +126,7 @@ for bert_model in lm_list:
                                     per_device_eval_batch_size=BATCH_SIZE,
                                     num_train_epochs=40,
                                     save_total_limit=1,
-                                    learning_rate=3e-5,
+                                    learning_rate=3e-6,
                                     weight_decay=0.01,
                                     logging_steps=1,
                                     metric_for_best_model = 'acc')
@@ -141,7 +146,7 @@ for bert_model in lm_list:
         train_dataset=train_iter,
         eval_dataset=valid_iter,
         compute_metrics=compute_metrics,
-        optimizers=[optimizer, lr_scheduler],
+        # optimizers=[optimizer, lr_scheduler],
         # callbacks = [EarlyStoppingCallback(early_stopping_patience=12)]
     )
 

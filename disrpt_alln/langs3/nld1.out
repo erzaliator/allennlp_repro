@@ -1,0 +1,658 @@
+0.3333333333333333
+1.0
+ASSIGN: 29
+CustomBERTModel(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30073, 768, padding_idx=3)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (encoder): CustomPooler2(
+    (_dropout): Dropout(p=0.0, inplace=False)
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (relation_decoder): Linear(in_features=768, out_features=29, bias=True)
+)
+['events.out.tfevents.1668139448.bc01bc43a6e4.23187.0']
+Epoch 1: Best val_acc: 0.2988
+Epoch 1: Best val_acc: 0.2988
+Epoch 1: train_loss: 2.8467 train_acc: 0.2594 | val_loss: 2.5700 val_acc: 0.2988
+00:02:26.19
+train_size: 397
+Epoch 2: Best val_acc: 0.3689
+Epoch 2: Best val_acc: 0.3689
+Epoch 2: train_loss: 2.5853 train_acc: 0.3136 | val_loss: 2.3954 val_acc: 0.3689
+00:02:25.14
+train_size: 397
+Epoch 3: Best val_acc: 0.3780
+Epoch 3: Best val_acc: 0.3780
+Epoch 3: train_loss: 2.4555 train_acc: 0.3539 | val_loss: 2.3350 val_acc: 0.3780
+00:02:24.98
+train_size: 397
+Epoch 4: Best val_acc: 0.3963
+Epoch 4: Best val_acc: 0.3963
+Epoch 4: train_loss: 2.3632 train_acc: 0.3715 | val_loss: 2.2634 val_acc: 0.3963
+00:02:24.52
+train_size: 397
+Epoch 5: Best val_acc: 0.4146
+Epoch 5: Best val_acc: 0.4146
+Epoch 5: train_loss: 2.2783 train_acc: 0.3911 | val_loss: 2.2066 val_acc: 0.4146
+00:02:21.27
+train_size: 397
+Epoch 6: Best val_acc: 0.4299
+Epoch 6: Best val_acc: 0.4299
+Epoch 6: train_loss: 2.2045 train_acc: 0.4162 | val_loss: 2.1834 val_acc: 0.4299
+00:02:24.94
+train_size: 397
+Epoch 7: Best val_acc: 0.4665
+Epoch 7: Best val_acc: 0.4665
+Epoch 7: train_loss: 2.1356 train_acc: 0.4314 | val_loss: 2.1101 val_acc: 0.4665
+00:02:25.21
+train_size: 397
+Epoch 8: Best val_acc: 0.4787
+Epoch 8: Best val_acc: 0.4787
+Epoch 8: train_loss: 2.0680 train_acc: 0.4521 | val_loss: 2.0806 val_acc: 0.4787
+00:02:25.39
+train_size: 397
+Epoch 9: Best val_acc: 0.4970
+Epoch 9: Best val_acc: 0.4970
+Epoch 9: train_loss: 2.0083 train_acc: 0.4647 | val_loss: 2.0387 val_acc: 0.4970
+00:02:24.93
+train_size: 397
+Epoch 10: Best val_acc: 0.5030
+Epoch 10: Best val_acc: 0.5030
+Epoch 10: train_loss: 1.9469 train_acc: 0.4824 | val_loss: 2.0275 val_acc: 0.5030
+00:02:21.87
+train_size: 397
+Epoch 11: Best val_acc: 0.5030
+Epoch 11: train_loss: 1.8831 train_acc: 0.4937 | val_loss: 1.9991 val_acc: 0.5030
+00:02:24.34
+train_size: 397
+Epoch 12: train_loss: 1.8249 train_acc: 0.5183 | val_loss: 1.9805 val_acc: 0.5000
+00:02:23.75
+train_size: 397
+Epoch 13: Best val_acc: 0.5122
+Epoch 13: Best val_acc: 0.5122
+Epoch 13: train_loss: 1.7591 train_acc: 0.5372 | val_loss: 1.9587 val_acc: 0.5122
+00:02:24.97
+train_size: 397
+Epoch 00014: reducing learning rate of group 0 to 7.0000e-07.
+Epoch 14: train_loss: 1.7055 train_acc: 0.5491 | val_loss: 1.9352 val_acc: 0.5030
+00:02:23.24
+train_size: 397
+Epoch 15: Best val_acc: 0.5183
+Epoch 15: Best val_acc: 0.5183
+Epoch 15: train_loss: 1.6542 train_acc: 0.5699 | val_loss: 1.9113 val_acc: 0.5183
+00:02:25.44
+train_size: 397
+Epoch 16: train_loss: 1.6199 train_acc: 0.5724 | val_loss: 1.9051 val_acc: 0.5122
+00:02:20.70
+train_size: 397
+Epoch 17: train_loss: 1.5743 train_acc: 0.5844 | val_loss: 1.9088 val_acc: 0.5091
+00:02:23.84
+train_size: 397
+Epoch 18: Best val_acc: 0.5183
+Epoch 18: train_loss: 1.5360 train_acc: 0.5995 | val_loss: 1.8955 val_acc: 0.5183
+00:02:24.78
+train_size: 397
+Epoch 19: train_loss: 1.5030 train_acc: 0.6077 | val_loss: 1.9098 val_acc: 0.5061
+00:02:24.03
+train_size: 397
+Epoch 20: Best val_acc: 0.5305
+Epoch 20: Best val_acc: 0.5305
+Epoch 20: train_loss: 1.4633 train_acc: 0.6178 | val_loss: 1.8770 val_acc: 0.5305
+00:02:26.23
+train_size: 397
+Epoch 21: Best val_acc: 0.5335
+Epoch 21: Best val_acc: 0.5335
+Epoch 21: train_loss: 1.4226 train_acc: 0.6423 | val_loss: 1.8594 val_acc: 0.5335
+00:01:58.41
+train_size: 397
+Epoch 22: train_loss: 1.3860 train_acc: 0.6442 | val_loss: 1.8937 val_acc: 0.5274
+00:02:22.69
+train_size: 397
+Epoch 23: train_loss: 1.3491 train_acc: 0.6587 | val_loss: 1.8578 val_acc: 0.5274
+00:02:23.81
+train_size: 397
+Epoch 24: train_loss: 1.3148 train_acc: 0.6593 | val_loss: 1.8892 val_acc: 0.5122
+00:02:23.89
+train_size: 397
+Epoch 25: train_loss: 1.2688 train_acc: 0.6832 | val_loss: 1.9029 val_acc: 0.5091
+00:02:23.68
+train_size: 397
+Epoch 26: train_loss: 1.2479 train_acc: 0.6958 | val_loss: 1.8663 val_acc: 0.5244
+00:02:23.89
+train_size: 397
+Epoch 00027: reducing learning rate of group 0 to 5.0000e-07.
+Epoch 27: train_loss: 1.2031 train_acc: 0.6990 | val_loss: 1.8445 val_acc: 0.5244
+00:02:23.85
+train_size: 397
+Epoch 28: Best val_acc: 0.5396
+Epoch 28: Best val_acc: 0.5396
+Epoch 28: train_loss: 1.1742 train_acc: 0.7185 | val_loss: 1.8306 val_acc: 0.5396
+00:02:22.66
+train_size: 397
+Epoch 29: train_loss: 1.1472 train_acc: 0.7217 | val_loss: 1.8450 val_acc: 0.5305
+00:02:23.38
+train_size: 397
+Epoch 30: Best val_acc: 0.5396
+Epoch 30: train_loss: 1.1205 train_acc: 0.7248 | val_loss: 1.8247 val_acc: 0.5396
+00:02:24.33
+train_size: 397
+Epoch 31: train_loss: 1.1028 train_acc: 0.7336 | val_loss: 1.8278 val_acc: 0.5335
+00:02:23.61
+train_size: 397
+Epoch 32: train_loss: 1.0709 train_acc: 0.7418 | val_loss: 1.8398 val_acc: 0.5244
+00:02:23.14
+train_size: 397
+Epoch 33: train_loss: 1.0521 train_acc: 0.7494 | val_loss: 1.8670 val_acc: 0.5335
+00:02:20.26
+train_size: 397
+Epoch 34: train_loss: 1.0284 train_acc: 0.7601 | val_loss: 1.8395 val_acc: 0.5274
+00:02:23.32
+train_size: 397
+Epoch 35: train_loss: 1.0051 train_acc: 0.7714 | val_loss: 1.8377 val_acc: 0.5274
+00:02:23.17
+train_size: 397
+Epoch 36: Best val_acc: 0.5427
+Epoch 36: Best val_acc: 0.5427
+Epoch 36: train_loss: 0.9820 train_acc: 0.7796 | val_loss: 1.8287 val_acc: 0.5427
+00:02:24.89
+train_size: 397
+Epoch 37: train_loss: 0.9605 train_acc: 0.7752 | val_loss: 1.8304 val_acc: 0.5335
+00:02:23.20
+train_size: 397
+Epoch 38: Best val_acc: 0.5518
+Epoch 38: Best val_acc: 0.5518
+Epoch 38: train_loss: 0.9418 train_acc: 0.7840 | val_loss: 1.8361 val_acc: 0.5518
+00:02:24.80
+train_size: 397
+Epoch 39: train_loss: 0.9212 train_acc: 0.7966 | val_loss: 1.8587 val_acc: 0.5183
+00:02:19.99
+train_size: 397
+Epoch 40: train_loss: 0.8988 train_acc: 0.8029 | val_loss: 1.8297 val_acc: 0.5396
+00:02:23.45
+train_size: 397
+Epoch 41: train_loss: 0.8829 train_acc: 0.8048 | val_loss: 1.8416 val_acc: 0.5366
+00:02:23.75
+train_size: 397
+Epoch 42: train_loss: 0.8612 train_acc: 0.8130 | val_loss: 1.8476 val_acc: 0.5274
+00:02:23.79
+train_size: 397
+Epoch 43: train_loss: 0.8355 train_acc: 0.8218 | val_loss: 1.8367 val_acc: 0.5457
+00:02:23.87
+train_size: 397
+Epoch 44: train_loss: 0.8212 train_acc: 0.8205 | val_loss: 1.8433 val_acc: 0.5366
+00:02:21.30
+train_size: 397
+Epoch 45: train_loss: 0.8013 train_acc: 0.8319 | val_loss: 1.8342 val_acc: 0.5457
+00:02:23.91
+train_size: 397
+Epoch 46: train_loss: 0.7837 train_acc: 0.8356 | val_loss: 1.8792 val_acc: 0.5335
+00:02:23.72
+train_size: 397
+Epoch 47: train_loss: 0.7555 train_acc: 0.8426 | val_loss: 1.8561 val_acc: 0.5244
+00:02:23.96
+train_size: 397
+Epoch 48: train_loss: 0.7429 train_acc: 0.8495 | val_loss: 1.8622 val_acc: 0.5244
+00:02:23.99
+train_size: 397
+Epoch 49: train_loss: 0.7251 train_acc: 0.8533 | val_loss: 1.8646 val_acc: 0.5274
+00:02:23.84
+train_size: 397
+Test_loss: 1.8989 test_acc: 0.5213
+00:00:09.47
+                      precision    recall  f1-score   support
+
+          antithesis       0.00      0.00      0.00         2
+          background       1.00      0.33      0.50         3
+        circumstance       0.36      0.56      0.44        16
+          concession       0.80      0.33      0.47        12
+           condition       0.50      0.62      0.56         8
+         conjunction       0.35      0.47      0.40        19
+            contrast       0.00      0.00      0.00         7
+         disjunction       1.00      0.50      0.67         4
+         elaboration       0.65      0.84      0.73        95
+          enablement       0.50      0.50      0.50         4
+          evaluation       0.50      0.50      0.50         2
+            evidence       0.00      0.00      0.00         6
+      interpretation       0.07      0.10      0.08        10
+               joint       0.00      0.00      0.00         3
+             justify       0.41      0.70      0.52        10
+                list       0.43      0.25      0.32        12
+               means       1.00      0.25      0.40         4
+          motivation       0.59      0.59      0.59        29
+ nonvolitional-cause       0.56      0.38      0.45        13
+nonvolitional-result       0.21      0.21      0.21        14
+           otherwise       0.00      0.00      0.00         1
+         preparation       0.48      0.58      0.52        19
+             purpose       1.00      0.67      0.80         6
+         restatement       0.00      0.00      0.00         2
+            sequence       1.00      0.40      0.57        10
+        solutionhood       0.00      0.00      0.00         8
+                span       0.00      0.00      0.00         1
+             summary       0.00      0.00      0.00         4
+    volitional-cause       0.00      0.00      0.00         2
+
+            accuracy                           0.52       326
+           macro avg       0.39      0.30      0.32       326
+        weighted avg       0.50      0.52      0.49       326
+
+Test Loss: 1.899 |  Test Acc: 52.13%
+Test_loss: 1.8721 test_acc: 0.5030
+00:00:09.43
+                      precision    recall  f1-score   support
+
+          antithesis       0.00      0.00      0.00         2
+          background       0.00      0.00      0.00         3
+        circumstance       0.35      0.56      0.43        16
+          concession       0.80      0.33      0.47        12
+           condition       0.45      0.62      0.53         8
+         conjunction       0.33      0.47      0.39        19
+            contrast       0.00      0.00      0.00         7
+         disjunction       1.00      0.25      0.40         4
+         elaboration       0.62      0.85      0.72        95
+          enablement       0.00      0.00      0.00         4
+          evaluation       0.00      0.00      0.00         2
+            evidence       0.00      0.00      0.00         6
+      interpretation       0.08      0.10      0.09        10
+               joint       0.00      0.00      0.00         3
+             justify       0.44      0.70      0.54        10
+                list       0.25      0.08      0.12        12
+               means       0.00      0.00      0.00         4
+          motivation       0.56      0.66      0.60        29
+ nonvolitional-cause       0.56      0.38      0.45        13
+nonvolitional-result       0.24      0.29      0.26        14
+           otherwise       0.00      0.00      0.00         1
+         preparation       0.46      0.58      0.51        19
+             purpose       1.00      0.67      0.80         6
+         restatement       0.00      0.00      0.00         2
+            sequence       1.00      0.20      0.33        10
+        solutionhood       0.00      0.00      0.00         8
+                span       0.00      0.00      0.00         1
+             summary       0.00      0.00      0.00         4
+    volitional-cause       0.00      0.00      0.00         2
+
+            accuracy                           0.50       326
+           macro avg       0.28      0.23      0.23       326
+        weighted avg       0.45      0.50      0.45       326
+
+Latest Test Loss: 1.872 |  Latest Test Acc: 50.30%
+Test_loss: 1.8721 test_acc: 0.5030
+00:00:09.42
+                      precision    recall  f1-score   support
+
+          antithesis       0.00      0.00      0.00         2
+          background       0.00      0.00      0.00         3
+        circumstance       0.35      0.56      0.43        16
+          concession       0.80      0.33      0.47        12
+           condition       0.45      0.62      0.53         8
+         conjunction       0.33      0.47      0.39        19
+            contrast       0.00      0.00      0.00         7
+         disjunction       1.00      0.25      0.40         4
+         elaboration       0.62      0.85      0.72        95
+          enablement       0.00      0.00      0.00         4
+          evaluation       0.00      0.00      0.00         2
+            evidence       0.00      0.00      0.00         6
+      interpretation       0.08      0.10      0.09        10
+               joint       0.00      0.00      0.00         3
+             justify       0.44      0.70      0.54        10
+                list       0.25      0.08      0.12        12
+               means       0.00      0.00      0.00         4
+          motivation       0.56      0.66      0.60        29
+ nonvolitional-cause       0.56      0.38      0.45        13
+nonvolitional-result       0.24      0.29      0.26        14
+           otherwise       0.00      0.00      0.00         1
+         preparation       0.46      0.58      0.51        19
+             purpose       1.00      0.67      0.80         6
+         restatement       0.00      0.00      0.00         2
+            sequence       1.00      0.20      0.33        10
+        solutionhood       0.00      0.00      0.00         8
+                span       0.00      0.00      0.00         1
+             summary       0.00      0.00      0.00         4
+    volitional-cause       0.00      0.00      0.00         2
+
+            accuracy                           0.50       326
+           macro avg       0.28      0.23      0.23       326
+        weighted avg       0.45      0.50      0.45       326
+
+Best Test Loss: 1.872 |  Best Test Acc: 50.30%
+Test_loss: 1.8613 test_acc: 0.5427
+00:00:09.46
+                      precision    recall  f1-score   support
+
+          antithesis       0.00      0.00      0.00         5
+          background       0.00      0.00      0.00         5
+        circumstance       0.46      0.57      0.51        28
+          concession       0.50      0.33      0.40         9
+           condition       0.78      1.00      0.88         7
+         conjunction       0.68      0.66      0.67        35
+            contrast       0.00      0.00      0.00         4
+         disjunction       1.00      0.10      0.18        10
+         elaboration       0.61      0.78      0.69        92
+          enablement       0.00      0.00      0.00         4
+          evaluation       1.00      0.50      0.67         2
+            evidence       1.00      0.17      0.29         6
+      interpretation       0.14      0.20      0.17        10
+               joint       0.00      0.00      0.00         9
+             justify       0.64      0.60      0.62        15
+                list       0.00      0.00      0.00         2
+               means       1.00      0.50      0.67         2
+          motivation       0.47      0.44      0.46        18
+ nonvolitional-cause       0.62      0.31      0.42        16
+nonvolitional-result       0.33      0.58      0.42        12
+         preparation       0.62      1.00      0.76        21
+         restatement       0.00      0.00      0.00         2
+            sequence       0.00      0.00      0.00         2
+        solutionhood       0.50      0.20      0.29         5
+             summary       0.00      0.00      0.00         2
+    volitional-cause       0.00      0.00      0.00         2
+
+            accuracy                           0.55       325
+           macro avg       0.40      0.31      0.31       325
+        weighted avg       0.53      0.55      0.51       325
+
+Val Loss: 1.861 |  Val Acc: 54.27%

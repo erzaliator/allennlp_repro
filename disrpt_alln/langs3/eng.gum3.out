@@ -1,0 +1,18 @@
+2022-11-11 03:39:13.769676: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-11-11 03:39:14.024557: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/VD/kaveri/anaconda3/envs/py310/lib/
+2022-11-11 03:39:14.024644: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-11-11 03:39:14.066749: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2022-11-11 03:39:15.004073: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/VD/kaveri/anaconda3/envs/py310/lib/
+2022-11-11 03:39:15.004253: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/VD/kaveri/anaconda3/envs/py310/lib/
+2022-11-11 03:39:15.004315: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+Traceback (most recent call last):
+  File "/home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/langs3/eng.py", line 415, in <module>
+    mnli_dataset = MNLIDataBert(train_df, val_df, test_df)
+  File "/home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/langs3/eng.py", line 137, in __init__
+    self.init_data()
+  File "/home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/langs3/eng.py", line 142, in init_data
+    self.train_data, self.train_idx = self.load_data(self.train_df)
+  File "/home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/langs3/eng.py", line 349, in load_data
+    feats = torch.tensor(feats)
+RuntimeError: Could not infer dtype of NoneType

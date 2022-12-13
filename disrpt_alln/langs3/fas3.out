@@ -1,0 +1,550 @@
+2022-11-11 07:52:54.559787: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-11-11 07:52:54.768465: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/VD/kaveri/anaconda3/envs/py310/lib/
+2022-11-11 07:52:54.768527: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-11-11 07:52:54.801936: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2022-11-11 07:52:55.606623: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/VD/kaveri/anaconda3/envs/py310/lib/
+2022-11-11 07:52:55.606740: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/VD/kaveri/anaconda3/envs/py310/lib/
+2022-11-11 07:52:55.606777: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+Some weights of the model checkpoint at HooshvareLab/bert-fa-base-uncased were not used when initializing BertModel: ['cls.predictions.decoder.bias', 'cls.seq_relationship.weight', 'cls.predictions.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of the model checkpoint at HooshvareLab/bert-fa-base-uncased were not used when initializing BertModel: ['cls.predictions.decoder.bias', 'cls.seq_relationship.weight', 'cls.predictions.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+0.3333333333333333
+1.0
+ASSIGN: 16
+CustomBERTModel(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(100000, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (encoder): CustomPooler2(
+    (_dropout): Dropout(p=0.0, inplace=False)
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (relation_decoder): Linear(in_features=768, out_features=16, bias=True)
+)/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/VD/kaveri/anaconda3/envs/py310/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+['events.out.tfevents.1668146846.bc01bc43a6e4.23435.0']
+Epoch 1: Best val_acc: 0.4327
+Epoch 1: Best val_acc: 0.4327
+Epoch 1: train_loss: 2.2386 train_acc: 0.3212 | val_loss: 1.9086 val_acc: 0.4327
+00:03:31.46
+train_size: 1025
+Epoch 2: Best val_acc: 0.4707
+Epoch 2: Best val_acc: 0.4707
+Epoch 2: train_loss: 1.9198 train_acc: 0.4227 | val_loss: 1.7166 val_acc: 0.4707
+00:03:32.92
+train_size: 1025
+Epoch 3: Best val_acc: 0.5307
+Epoch 3: Best val_acc: 0.5307
+Epoch 3: train_loss: 1.7796 train_acc: 0.4749 | val_loss: 1.6338 val_acc: 0.5307
+00:03:33.33
+train_size: 1025
+Epoch 4: Best val_acc: 0.5447
+Epoch 4: Best val_acc: 0.5447
+Epoch 4: train_loss: 1.6858 train_acc: 0.5144 | val_loss: 1.5804 val_acc: 0.5447
+00:03:33.76
+train_size: 1025
+Epoch 5: Best val_acc: 0.5547
+Epoch 5: Best val_acc: 0.5547
+Epoch 5: train_loss: 1.5993 train_acc: 0.5427 | val_loss: 1.5446 val_acc: 0.5547
+00:03:34.16
+train_size: 1025
+Epoch 6: Best val_acc: 0.5600
+Epoch 6: Best val_acc: 0.5600
+Epoch 6: train_loss: 1.5317 train_acc: 0.5600 | val_loss: 1.4960 val_acc: 0.5600
+00:03:33.82
+train_size: 1025
+Epoch 7: train_loss: 1.4621 train_acc: 0.5888 | val_loss: 1.4829 val_acc: 0.5547
+00:03:32.08
+train_size: 1025
+Epoch 8: Best val_acc: 0.5613
+Epoch 8: Best val_acc: 0.5613
+Epoch 8: train_loss: 1.4054 train_acc: 0.5971 | val_loss: 1.4608 val_acc: 0.5613
+00:03:35.13
+train_size: 1025
+Epoch 9: Best val_acc: 0.5667
+Epoch 9: Best val_acc: 0.5667
+Epoch 9: train_loss: 1.3461 train_acc: 0.6215 | val_loss: 1.4704 val_acc: 0.5667
+00:03:31.70
+train_size: 1025
+Epoch 10: train_loss: 1.2825 train_acc: 0.6317 | val_loss: 1.4793 val_acc: 0.5607
+00:03:29.26
+train_size: 1025
+Epoch 11: train_loss: 1.2217 train_acc: 0.6532 | val_loss: 1.4792 val_acc: 0.5527
+00:03:29.65
+train_size: 1025
+Epoch 12: Best val_acc: 0.5720
+Epoch 12: Best val_acc: 0.5720
+Epoch 12: train_loss: 1.1746 train_acc: 0.6620 | val_loss: 1.4816 val_acc: 0.5720
+00:03:31.67
+train_size: 1025
+Epoch 13: train_loss: 1.1087 train_acc: 0.6888 | val_loss: 1.5027 val_acc: 0.5620
+00:03:35.96
+train_size: 1025
+Epoch 00014: reducing learning rate of group 0 to 7.0000e-07.
+Epoch 14: train_loss: 1.0527 train_acc: 0.7005 | val_loss: 1.5208 val_acc: 0.5627
+00:03:33.79
+train_size: 1025
+Epoch 15: train_loss: 0.9929 train_acc: 0.7244 | val_loss: 1.5450 val_acc: 0.5660
+00:03:28.39
+train_size: 1025
+Epoch 16: train_loss: 0.9590 train_acc: 0.7295 | val_loss: 1.5684 val_acc: 0.5647
+00:03:25.77
+train_size: 1025
+Epoch 17: train_loss: 0.9164 train_acc: 0.7463 | val_loss: 1.5798 val_acc: 0.5607
+00:03:30.49
+train_size: 1025
+Epoch 18: train_loss: 0.8838 train_acc: 0.7568 | val_loss: 1.6071 val_acc: 0.5593
+00:03:27.47
+train_size: 1025
+Epoch 19: train_loss: 0.8496 train_acc: 0.7646 | val_loss: 1.6453 val_acc: 0.5673
+00:03:27.28
+train_size: 1025
+Epoch 20: train_loss: 0.8062 train_acc: 0.7795 | val_loss: 1.6398 val_acc: 0.5487
+00:03:27.50
+train_size: 1025
+Epoch 21: train_loss: 0.7773 train_acc: 0.7822 | val_loss: 1.6785 val_acc: 0.5513
+00:03:27.94
+train_size: 1025
+Epoch 22: train_loss: 0.7437 train_acc: 0.7966 | val_loss: 1.7355 val_acc: 0.5673
+00:03:26.34
+train_size: 1025
+Epoch 23: train_loss: 0.7055 train_acc: 0.8027 | val_loss: 1.7254 val_acc: 0.5553
+00:03:28.31
+train_size: 1025
+Test_loss: 1.8857 test_acc: 0.5152
+00:00:09.21
+              precision    recall  f1-score   support
+
+ attribution       0.93      0.72      0.81        39
+  background       0.56      0.74      0.64        31
+       cause       0.22      0.29      0.25        35
+  comparison       0.00      0.00      0.00         5
+   condition       0.73      0.73      0.73        15
+    contrast       0.50      0.50      0.50        54
+ elaboration       0.61      0.71      0.66       153
+  enablement       0.88      0.64      0.74        11
+  evaluation       0.27      0.16      0.20        25
+ explanation       0.15      0.18      0.16        45
+       joint       0.53      0.66      0.59       116
+manner-means       0.00      0.00      0.00         7
+     summary       0.00      0.00      0.00        16
+    temporal       0.40      0.10      0.16        20
+  topichange       0.00      0.00      0.00         9
+ topicomment       0.00      0.00      0.00        11
+
+    accuracy                           0.52       592
+   macro avg       0.36      0.34      0.34       592
+weighted avg       0.48      0.52      0.49       592
+
+Test Loss: 1.886 |  Test Acc: 51.52%
+Test_loss: 1.6592 test_acc: 0.5253
+00:00:09.16
+              precision    recall  f1-score   support
+
+ attribution       0.97      0.72      0.82        39
+  background       0.52      0.74      0.61        31
+       cause       0.33      0.26      0.29        35
+  comparison       0.00      0.00      0.00         5
+   condition       0.69      0.73      0.71        15
+    contrast       0.52      0.50      0.51        54
+ elaboration       0.60      0.72      0.65       153
+  enablement       0.88      0.64      0.74        11
+  evaluation       0.33      0.12      0.18        25
+ explanation       0.20      0.22      0.21        45
+       joint       0.48      0.72      0.57       116
+manner-means       0.00      0.00      0.00         7
+     summary       0.00      0.00      0.00        16
+    temporal       0.00      0.00      0.00        20
+  topichange       0.00      0.00      0.00         9
+ topicomment       0.00      0.00      0.00        11
+
+    accuracy                           0.53       592
+   macro avg       0.34      0.34      0.33       592
+weighted avg       0.47      0.53      0.49       592
+
+Latest Test Loss: 1.659 |  Latest Test Acc: 52.53%
+Test_loss: 1.6592 test_acc: 0.5253
+00:00:08.83
+              precision    recall  f1-score   support
+
+ attribution       0.97      0.72      0.82        39
+  background       0.52      0.74      0.61        31
+       cause       0.33      0.26      0.29        35
+  comparison       0.00      0.00      0.00         5
+   condition       0.69      0.73      0.71        15
+    contrast       0.52      0.50      0.51        54
+ elaboration       0.60      0.72      0.65       153
+  enablement       0.88      0.64      0.74        11
+  evaluation       0.33      0.12      0.18        25
+ explanation       0.20      0.22      0.21        45
+       joint       0.48      0.72      0.57       116
+manner-means       0.00      0.00      0.00         7
+     summary       0.00      0.00      0.00        16
+    temporal       0.00      0.00      0.00        20
+  topichange       0.00      0.00      0.00         9
+ topicomment       0.00      0.00      0.00        11
+
+    accuracy                           0.53       592
+   macro avg       0.34      0.34      0.33       592
+weighted avg       0.47      0.53      0.49       592
+
+Best Test Loss: 1.659 |  Best Test Acc: 52.53%
+Test_loss: 1.4863 test_acc: 0.5707
+00:00:07.59
+              precision    recall  f1-score   support
+
+ attribution       0.91      0.79      0.85        39
+  background       0.54      0.72      0.62        29
+       cause       0.50      0.24      0.33        41
+  comparison       0.00      0.00      0.00         2
+   condition       0.72      0.81      0.76        16
+    contrast       0.69      0.47      0.56        38
+ elaboration       0.62      0.80      0.70       122
+  enablement       0.45      0.56      0.50         9
+  evaluation       0.27      0.15      0.19        20
+ explanation       0.21      0.25      0.23        36
+       joint       0.55      0.68      0.61       115
+manner-means       0.00      0.00      0.00         5
+     summary       0.00      0.00      0.00         8
+    temporal       0.00      0.00      0.00         8
+ topicomment       0.00      0.00      0.00        11
+
+    accuracy                           0.57       499
+   macro avg       0.37      0.37      0.36       499
+weighted avg       0.53      0.57      0.54       499
+
+Val Loss: 1.486 |  Val Acc: 57.07%

@@ -32,7 +32,10 @@ def get_combined_feature_tensor_2(features, feature_list, feature_modules):
             raise ValueError()
         output_tensors.append(output_tensor)
         i += 1
-    output_tensors = torch.cat(output_tensors, dim=-1)
+    if len(output_tensors)==0:
+        output_tensors = torch.empty(0,0)
+    else:
+        output_tensors = torch.cat(output_tensors, dim=-1)
     if len(output_tensors.shape)==1: 
         output_tensors = torch.unsqueeze(output_tensors, 0)
     return output_tensors

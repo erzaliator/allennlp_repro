@@ -26,6 +26,8 @@ def zero_pad(batched_sequence_item, d):
     """Pad an item to d in the 3rd dimension"""
     batched_sequence_item = batched_sequence_item.squeeze(-1)
     assert batched_sequence_item.shape[1] == 1
+    if len(batched_sequence_item.shape)==2: # handle for no features
+        batched_sequence_item = batched_sequence_item.unsqueeze(1)
     if batched_sequence_item.shape[2] > d:
         raise Exception("Too many feature dimensions! " + str(batched_sequence_item.shape[2]) + " > " + f"{d}")
     diff = d - batched_sequence_item.shape[2]

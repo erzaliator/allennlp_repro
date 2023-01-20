@@ -8,3 +8,5 @@
 *wandb/debug*
 *wandb/latest*
 *disrpt_alln/3_from_scratch/wandb/*
+*disrpt_alln/4_adapter/composable-sft/*
+*disrpt_alln/4_adapter/CPGAdapters/*

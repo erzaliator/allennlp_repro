@@ -93,16 +93,16 @@ class FeaturefulBertEmbedder(TokenEmbedder):
         tokenizer_kwargs: Optional[Dict[str, Any]] = None,
     ) -> None:
         super().__init__()
-        from transformers import AdapterConfig
-        lang_adapter_config = AdapterConfig.load("pfeiffer", reduction_factor=2)
-        self.transformer_model = FeaturefulBert(config=lang_adapter_config)
-        # self.transformer_model = FeaturefulBert.from_pretrained(pretrained_model_name_or_path=model_name, hidden_act=hidden_activation_allen)
+        # from transformers import AdapterConfig #
+        # lang_adapter_config = AdapterConfig.load("pfeiffer", reduction_factor=2) #
+        # self.transformer_model = FeaturefulBert(config=lang_adapter_config) # 
+        self.transformer_model = FeaturefulBert.from_pretrained(pretrained_model_name_or_path=model_name, hidden_act=hidden_activation_allen)
         # Unfreeze and activate stack setup
-        from transformers.adapters.composition import Stack
+        # from transformers.adapters.composition import Stack #
 
-        lang = 'en'
-        self.encoder.add_adapter("disrpt")
-        self.encoder.active_adapters = Stack(lang, "disrpt")
+        # lang = 'de' #
+        # self.encoder.add_adapter("disrpt") #
+        # self.encoder.active_adapters = Stack(lang, "disrpt") #
 
         self.init_feature_modules(feature_list, vocab)
 

@@ -5,11 +5,11 @@ from torch import nn
 from allennlp.data import Vocabulary
 from transformers import BertConfig
 from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions
-from transformers.models.bert.modeling_bert import BertPooler, BertEncoderDouble, BertEmbeddings, BertPreTrainedModel
-from transformers.models.bert.modeling_bert import AutoAdapterModel
+from transformers.models.bert.modeling_bert import BertPooler, BertEncoderDouble, BertEmbeddings, BertPreTrainedModel, BertModel
+from transformers.adapters.mixins.bert import BertModelAdaptersMixin
 
 # from gucorpling_models.features import get_feature_modules, get_combined_feature_tensor, FeatureBundle
-from features_custom2 import get_combined_feature_tensor_2, get_feature_modules
+from features_custom_original import get_combined_feature_tensor_2, get_feature_modules
 
 
 def insert_into_sequence(batched_sequence, batched_sequence_item, sequence_position):
@@ -36,7 +36,7 @@ def zero_pad(batched_sequence_item, d):
     return torch.cat((batched_sequence_item, zeros), dim=2).to(batched_sequence_item.device)
 
 
-class FeaturefulBert(BertPreTrainedModel):
+class FeaturefulBert(BertModel):
     """
     The model can behave as an encoder (with only self-attention) as well as a decoder, in which case a layer of
     cross-attention is added between the self-attention layers, following the architecture described in `Attention is
@@ -66,11 +66,11 @@ class FeaturefulBert(BertPreTrainedModel):
         super().__init__(config)
         self.config = config
 
-        from transformers import AutoConfig
-        config = AutoConfig.from_pretrained("bert-base-multilingual-cased",)
+        # from transformers import AutoConfig
+        # config = AutoConfig.from_pretrained("bert-base-multilingual-cased",)
         
-        self.embeddings = BertEmbeddings(config) #KAVERI: AdapterBertEmbedder
-        self.encoder = BertEncoderDouble(config)
+        self.embeddings = BertEmbeddings(config) 
+        self.encoder = BertEncoderDouble(config) #KAVERI: Adapter
         self.pooler = BertPooler(config) if add_pooling_layer else None
         self.init_weights()
 
@@ -262,6 +262,8 @@ class FeaturefulBert(BertPreTrainedModel):
             dim=3
         )
 
+        # modified_embedding_output = self.invertible_adapters_forward(modified_embedding_output) #KAVERI added from adapter class. NOT BEING MODIFIED. NONE.
+      
         encoder_outputs = self.encoder(
             modified_embedding_output,
             attention_mask=modified_extended_attention_mask,
@@ -274,7 +276,7 @@ class FeaturefulBert(BertPreTrainedModel):
             output_hidden_states=output_hidden_states,
             return_dict=return_dict,
         )
-        sequence_output = encoder_outputs[0] #4, 513, 768 v allen 4, 50, 568
+        sequence_output = encoder_outputs[0]
         pooled_output = self.pooler(sequence_output) if self.pooler is not None else None
 
         if not return_dict:

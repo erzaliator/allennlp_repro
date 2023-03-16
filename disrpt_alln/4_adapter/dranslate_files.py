@@ -8,7 +8,7 @@ from spacytokenizer import SpacyTokenizer
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 
-device = torch.device('cuda:4')
+device = torch.device('cuda:7')
 
 
 def remove_punkt_from_input(align_input):
@@ -37,8 +37,8 @@ class HFTranslator:
 
     def __init__(self, src, dest, device):
         self.tokenizer = AutoTokenizer.from_pretrained("google/bert2bert_L-24_wmt_en_de", pad_token="<pad>", eos_token="</s>", bos_token="<s>")
-        print(device)
         self.model = AutoModelForSeq2SeqLM.from_pretrained("google/bert2bert_L-24_wmt_en_de").to(device)
+        print(device)
         self.src = src
         self.dest = dest
         self.device = device

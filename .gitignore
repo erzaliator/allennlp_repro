@@ -10,3 +10,6 @@
 *disrpt_alln/3_from_scratch/wandb/*
 *disrpt_alln/4_adapter/composable-sft/*
 *disrpt_alln/4_adapter/CPGAdapters/*
+*disrpt_alln/4_adapter/wandb/run*
+*disrpt_alln/4_adapter/nologs*
+*disrpt_alln/4_adapter/~/.cache/torch*

@@ -1,0 +1,1 @@
+locate the file in /home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/5_madx/lang2vec/lang2vec/uriel_kaveri.py

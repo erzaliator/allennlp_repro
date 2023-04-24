@@ -1,0 +1,70 @@
+Running with params: BERT_MODEL=bert-base-multilingual-cased lr=2e-05
+-------------------------------------------------------------------
+Lang1:  deu.rst.pcc
+Saving run to (pretrain stage):  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased
+Will save best model to:  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_deu.rst.pcc/best_acc
+read 2164 examples
+read 241 examples
+read 260 examples
+Total prediction labels:  26
+USING HEAD:  disrpt-deu-rst-pcc
+{'train@deu.rst.pcc_loss': 3.027005195617676, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.09288354898336414, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.016766191337094623, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.01155218928232883, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.03728696856535922, 'train@deu.rst.pcc_loss@deu.rst.pcc': 3.0270049571990967, 'train@deu.rst.pcc_runtime': 26.9404, 'train@deu.rst.pcc_samples_per_second': 80.326, 'train@deu.rst.pcc_steps_per_second': 2.524, 'epoch': 1.0}
+{'train@deu.rst.pcc_loss': 3.027005195617676, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.09288354898336414, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.016766191337094623, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.01155218928232883, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.03728696856535922, 'train@deu.rst.pcc_loss@deu.rst.pcc': 3.0270049571990967, 'train@deu.rst.pcc_runtime': 26.9404, 'train@deu.rst.pcc_samples_per_second': 80.326, 'train@deu.rst.pcc_steps_per_second': 2.524, 'epoch': 1.0}
+trying... train@deu.rst.pcc_accuracy@deu.rst.pcc
+Saving the model using CustomCallback:  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_deu.rst.pcc/best_acc
+{'loss': 3.1268, 'learning_rate': 1.8333333333333333e-05, 'epoch': 1.0}
+{'eval_loss': 3.049595594406128, 'eval_accuracy@deu.rst.pcc': 0.04979253112033195, 'eval_f1@deu.rst.pcc': 0.01109110310790983, 'eval_precision@deu.rst.pcc': 0.007048708372237783, 'eval_recall@deu.rst.pcc': 0.028032153032153034, 'eval_loss@deu.rst.pcc': 3.0495948791503906, 'eval_runtime': 3.2011, 'eval_samples_per_second': 75.287, 'eval_steps_per_second': 2.499, 'epoch': 1.0}
+USING HEAD:  disrpt-deu-rst-pcc
+{'train@deu.rst.pcc_loss': 2.918837547302246, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.10813308687615526, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.020844550876948528, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.0393859375343594, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.0440381778968641, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.918837785720825, 'train@deu.rst.pcc_runtime': 26.7315, 'train@deu.rst.pcc_samples_per_second': 80.953, 'train@deu.rst.pcc_steps_per_second': 2.544, 'epoch': 2.0}
+{'train@deu.rst.pcc_loss': 2.918837547302246, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.10813308687615526, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.020844550876948528, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.0393859375343594, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.0440381778968641, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.918837785720825, 'train@deu.rst.pcc_runtime': 26.7315, 'train@deu.rst.pcc_samples_per_second': 80.953, 'train@deu.rst.pcc_steps_per_second': 2.544, 'epoch': 2.0}
+trying... train@deu.rst.pcc_accuracy@deu.rst.pcc
+Saving the model using CustomCallback:  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_deu.rst.pcc/best_acc
+{'loss': 2.9798, 'learning_rate': 1.6666666666666667e-05, 'epoch': 2.0}
+{'eval_loss': 2.959254503250122, 'eval_accuracy@deu.rst.pcc': 0.0995850622406639, 'eval_f1@deu.rst.pcc': 0.013043478260869566, 'eval_precision@deu.rst.pcc': 0.00811956195619562, 'eval_recall@deu.rst.pcc': 0.040865384615384616, 'eval_loss@deu.rst.pcc': 2.959254264831543, 'eval_runtime': 3.2106, 'eval_samples_per_second': 75.063, 'eval_steps_per_second': 2.492, 'epoch': 2.0}
+USING HEAD:  disrpt-deu-rst-pcc
+{'train@deu.rst.pcc_loss': 2.8552043437957764, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.13493530499075784, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.036509448170680164, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.12403068604326381, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.058361385625165435, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.8552041053771973, 'train@deu.rst.pcc_runtime': 26.6883, 'train@deu.rst.pcc_samples_per_second': 81.084, 'train@deu.rst.pcc_steps_per_second': 2.548, 'epoch': 3.0}
+{'train@deu.rst.pcc_loss': 2.8552043437957764, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.13493530499075784, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.036509448170680164, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.12403068604326381, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.058361385625165435, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.8552041053771973, 'train@deu.rst.pcc_runtime': 26.6883, 'train@deu.rst.pcc_samples_per_second': 81.084, 'train@deu.rst.pcc_steps_per_second': 2.548, 'epoch': 3.0}
+trying... train@deu.rst.pcc_accuracy@deu.rst.pcc
+Saving the model using CustomCallback:  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_deu.rst.pcc/best_acc
+{'loss': 2.9169, 'learning_rate': 1.5000000000000002e-05, 'epoch': 3.0}
+{'eval_loss': 2.907355308532715, 'eval_accuracy@deu.rst.pcc': 0.12448132780082988, 'eval_f1@deu.rst.pcc': 0.02751853609299762, 'eval_precision@deu.rst.pcc': 0.059916769738198296, 'eval_recall@deu.rst.pcc': 0.054754273504273504, 'eval_loss@deu.rst.pcc': 2.9073550701141357, 'eval_runtime': 3.3442, 'eval_samples_per_second': 72.066, 'eval_steps_per_second': 2.392, 'epoch': 3.0}
+USING HEAD:  disrpt-deu-rst-pcc
+{'train@deu.rst.pcc_loss': 2.8034820556640625, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.19316081330868762, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.08440404556013627, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.08849264168855414, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.10533276017523018, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.8034820556640625, 'train@deu.rst.pcc_runtime': 26.729, 'train@deu.rst.pcc_samples_per_second': 80.961, 'train@deu.rst.pcc_steps_per_second': 2.544, 'epoch': 4.0}
+{'train@deu.rst.pcc_loss': 2.8034820556640625, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.19316081330868762, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.08440404556013627, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.08849264168855414, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.10533276017523018, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.8034820556640625, 'train@deu.rst.pcc_runtime': 26.729, 'train@deu.rst.pcc_samples_per_second': 80.961, 'train@deu.rst.pcc_steps_per_second': 2.544, 'epoch': 4.0}
+trying... train@deu.rst.pcc_accuracy@deu.rst.pcc
+Saving the model using CustomCallback:  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_deu.rst.pcc/best_acc
+{'loss': 2.8598, 'learning_rate': 1.3333333333333333e-05, 'epoch': 4.0}
+{'eval_loss': 2.8685641288757324, 'eval_accuracy@deu.rst.pcc': 0.1825726141078838, 'eval_f1@deu.rst.pcc': 0.07393019694348034, 'eval_precision@deu.rst.pcc': 0.10156239529304545, 'eval_recall@deu.rst.pcc': 0.1029965404965405, 'eval_loss@deu.rst.pcc': 2.8685638904571533, 'eval_runtime': 3.2312, 'eval_samples_per_second': 74.585, 'eval_steps_per_second': 2.476, 'epoch': 4.0}
+USING HEAD:  disrpt-deu-rst-pcc
+{'train@deu.rst.pcc_loss': 2.759429931640625, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.2231977818853974, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.09407736377931367, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.0901425329499, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.13287445723766778, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.759429931640625, 'train@deu.rst.pcc_runtime': 26.7165, 'train@deu.rst.pcc_samples_per_second': 80.998, 'train@deu.rst.pcc_steps_per_second': 2.545, 'epoch': 5.0}
+{'train@deu.rst.pcc_loss': 2.759429931640625, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.2231977818853974, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.09407736377931367, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.0901425329499, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.13287445723766778, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.759429931640625, 'train@deu.rst.pcc_runtime': 26.7165, 'train@deu.rst.pcc_samples_per_second': 80.998, 'train@deu.rst.pcc_steps_per_second': 2.545, 'epoch': 5.0}
+trying... train@deu.rst.pcc_accuracy@deu.rst.pcc
+Saving the model using CustomCallback:  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_deu.rst.pcc/best_acc
+{'loss': 2.8121, 'learning_rate': 1.1666666666666668e-05, 'epoch': 5.0}
+{'eval_loss': 2.8341033458709717, 'eval_accuracy@deu.rst.pcc': 0.1908713692946058, 'eval_f1@deu.rst.pcc': 0.08514656938044035, 'eval_precision@deu.rst.pcc': 0.08916175987630015, 'eval_recall@deu.rst.pcc': 0.12924806674806674, 'eval_loss@deu.rst.pcc': 2.8341033458709717, 'eval_runtime': 3.2125, 'eval_samples_per_second': 75.02, 'eval_steps_per_second': 2.49, 'epoch': 5.0}
+USING HEAD:  disrpt-deu-rst-pcc
+{'train@deu.rst.pcc_loss': 2.7215142250061035, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.23151571164510165, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.09553253117759454, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.08828809070280491, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.13902224235261784, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.7215142250061035, 'train@deu.rst.pcc_runtime': 26.7213, 'train@deu.rst.pcc_samples_per_second': 80.984, 'train@deu.rst.pcc_steps_per_second': 2.545, 'epoch': 6.0}
+{'train@deu.rst.pcc_loss': 2.7215142250061035, 'train@deu.rst.pcc_accuracy@deu.rst.pcc': 0.23151571164510165, 'train@deu.rst.pcc_f1@deu.rst.pcc': 0.09553253117759454, 'train@deu.rst.pcc_precision@deu.rst.pcc': 0.08828809070280491, 'train@deu.rst.pcc_recall@deu.rst.pcc': 0.13902224235261784, 'train@deu.rst.pcc_loss@deu.rst.pcc': 2.7215142250061035, 'train@deu.rst.pcc_runtime': 26.7213, 'train@deu.rst.pcc_samples_per_second': 80.984, 'train@deu.rst.pcc_steps_per_second': 2.545, 'epoch': 6.0}
+trying... train@deu.rst.pcc_accuracy@deu.rst.pcc
+Saving the model using CustomCallback:  runs/full_shot/same_pretrain/CheckFullShot=v4_pretrain_deu.rst.pcc_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_deu.rst.pcc/best_acc
+{'loss': 2.7758, 'learning_rate': 1e-05, 'epoch': 6.0}
+{'eval_loss': 2.8022501468658447, 'eval_accuracy@deu.rst.pcc': 0.1991701244813278, 'eval_f1@deu.rst.pcc': 0.08537764277250863, 'eval_precision@deu.rst.pcc': 0.0866992779966851, 'eval_recall@deu.rst.pcc': 0.13476800976800976, 'eval_loss@deu.rst.pcc': 2.802250385284424, 'eval_runtime': 3.2203, 'eval_samples_per_second': 74.837, 'eval_steps_per_second': 2.484, 'epoch': 6.0}
+{'train_runtime': 522.6381, 'train_samples_per_second': 49.686, 'train_steps_per_second': 1.561, 'train_loss': 2.9118779500325522, 'epoch': 6.0}
+***** train_log metrics *****
+  epoch                    =        6.0
+  train_loss               =     2.9119
+  train_runtime            = 0:08:42.63
+  train_samples_per_second =     49.686
+  train_steps_per_second   =      1.561
+-------------------------------------------------------------------
+Lang1:  deu.rst.pcc    Lang2:  eng.pdtb.pdtb
+Saving run to:  runs/full_shot/same_pretrain/CheckFullShot=v4_finetune_deu.rst.pcc_eng.pdtb.pdtb_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased
+Will save best model to (finetune stage):  runs/full_shot/same_pretrain/CheckFullShot=v4_finetune_deu.rst.pcc_eng.pdtb.pdtb_lrfunc=Adafactor_lr=2e-05_plm=bert-base-multilingual-cased_eng.pdtb.pdtb/best_acc
+read 43920 examples
+read 1674 examples
+read 2257 examples
+Total prediction labels:  23
+BEFORE:  disrpt-deu-rst-pcc
+AFTER:  disrpt-eng-pdtb-pdtb
+AFTER ADAPTER:  disrpt-eng-pdtb-pdtb
+USING HEAD:  disrpt-eng-pdtb-pdtb

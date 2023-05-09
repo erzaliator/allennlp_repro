@@ -23,7 +23,7 @@ def get_combined_feature_tensor_2(features, feature_list, feature_modules):
             feature = features[module_key].squeeze()
         except:
             feature = features[:, i:i+1].squeeze()
-        if module_key in ['sat_children', 'nuc_children']:
+        if module_key in ['sat_children', 'nuc_children', 'length_ratio', 'doclen']:
             feature = feature.unsqueeze(-1)
         try:
             output_tensor = module(feature)
@@ -72,7 +72,7 @@ def get_feature_modules(feature_list, vocab: Vocabulary) -> Tuple[torch.nn.Modul
         vocab_feature_name = get_vocab_feature_name(key)
         # config = vocab.get_token_to_index_vocabulary(key)
         # ns = config.label_namespace
-        if key in ['sat_children', 'nuc_children']:
+        if key in ['sat_children', 'nuc_children', 'length_ratio', 'doclen']:
             modules[key] = torch.nn.Identity()
             total_dims += 1
         else:
@@ -84,9 +84,5 @@ def get_feature_modules(feature_list, vocab: Vocabulary) -> Tuple[torch.nn.Modul
             edims = math.ceil(math.sqrt(size))
             total_dims += edims
             modules[key] = torch.nn.Embedding(size, edims, padding_idx=(0))
-            # print(modules[key])
-        # if key=='u1_depdir':
-        #     print('u1_depdir: ', vocab.get_token_to_index_vocabulary(vocab_feature_name))
-        #     print(vocab.get_vocab_size(vocab_feature_name))
 
     return torch.nn.ModuleDict(modules), total_dims

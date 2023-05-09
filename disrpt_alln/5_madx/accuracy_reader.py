@@ -82,15 +82,17 @@ for experiment_name in ['CheckFullShot=v4_finetune_', 'CheckFullShot=v5_finetune
     df_experiment_list.append(df_experiment)
 
 
-# f = open('latest_features.tsv', 'w')
+# f = open('latest_features_runfix.tsv', 'w')
 # flag=1
 # for run in range(3):
 #     for lang1 in lang_list:
 #         for lang2 in lang_list:
 #             feat_list, header = get_feat_list(lang1, lang2, df_feats)
 #             header = ['Run', 'Dataset1', 'Dataset2']+header+['Model Percentage Gain', 'Model gains', 'Model absolute']
-#             average = (df_experiment_list[0][lang2][lang1])#+df_experiment_list[1][lang2][lang1]+df_experiment_list[2][lang2][lang1])/3
-#             baseline_average = (df_experiment_list[0][lang2][lang2])#+df_experiment_list[1][lang2][lang2]+df_experiment_list[2][lang2][lang2])/3
+#             # average = (df_experiment_list[0][lang2][lang1]+df_experiment_list[1][lang2][lang1]+df_experiment_list[2][lang2][lang1])/3
+#             # baseline_average = (df_experiment_list[0][lang2][lang2]+df_experiment_list[1][lang2][lang2]+df_experiment_list[2][lang2][lang2])/3
+#             average = (df_experiment_list[run][lang2][lang1])
+#             baseline_average = (df_experiment_list[run][lang2][lang2])
 #             absolute_gains = str(average-baseline_average)
 #             relative_gains = str((average-baseline_average)*100/baseline_average)
 #             if flag:

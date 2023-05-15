@@ -1,0 +1,15 @@
+                     precision    recall  f1-score   support
+
+                , i       0.00      0.00      0.00         0
+           contrast       0.00      0.00      0.00         2
+        elaboration       1.00      1.00      1.00         5
+     interpretation       0.00      0.00      0.00         1
+interpretation of a       0.00      0.00      0.00         0
+          is a list       0.00      0.00      0.00         0
+               list       0.00      0.00      0.00         5
+           sequence       0.00      0.00      0.00         2
+      sequence is a       0.00      0.00      0.00         0
+
+           accuracy                           0.33        15
+          macro avg       0.11      0.11      0.11        15
+       weighted avg       0.33      0.33      0.33        15

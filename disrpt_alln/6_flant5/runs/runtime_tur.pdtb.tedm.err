@@ -1,0 +1,36 @@
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/6_flant │
+│ 5/runner.py:68 in <module>                                                   │
+│                                                                              │
+│   65 │   early_stopping_patience = args.early_stopping_patience              │
+│   66 │   refinement = args.refinement                                        │
+│   67 │                                                                       │
+│ ❱ 68 │   train_loader, val_loader, test_loader, num_labels, label_space, maj │
+│   69 │   train_the_model(num_epochs, train_loader, val_loader, test_loader,  │
+│   70 │   │   │   │   │   num_labels, early_stopping_patience, learning_rate, │
+│   71 │   │   │   │   │   dataset_name)                                       │
+│                                                                              │
+│ /home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/6_flant │
+│ 5/../6_flant5/helper_fns/dataset.py:15 in get_dataset                        │
+│                                                                              │
+│    12 def get_dataset(MODEL_NAME, device, shared_folder, dataset_name, batch │
+│    13 │                                                                      │
+│    14 │   # Load the PDTB text classification data from a CSV file           │
+│ ❱  15 │   df_train = read_df_custom(shared_folder + dataset_name +'/' +datas │
+│    16 │   df_dev = read_df_custom(shared_folder + dataset_name +'/' +dataset │
+│    17 │   df_test = read_df_custom(shared_folder + dataset_name +'/' +datase │
+│    18                                                                        │
+│                                                                              │
+│ /home/VD/kaveri/bert_categorical_tutorial/allennlp_repro/disrpt_alln/6_flant │
+│ 5/../6_flant5/helper_fns/preprocessing.py:9 in read_df_custom                │
+│                                                                              │
+│    6 │   extracted_columns = ['unit1_txt', 'unit1_sent', 'unit2_txt', 'unit2 │
+│    7 │   header = header.split()                                             │
+│    8 │   df = pd.DataFrame(columns=extracted_columns)                        │
+│ ❱  9 │   file = open(file, 'r')                                              │
+│   10 │                                                                       │
+│   11 │   rows = []                                                           │
+│   12 │   count = 0                                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+FileNotFoundError: [Errno 2] No such file or directory: 
+'/home/VD/kaveri/sharedtask2023/data/tur.pdtb.tedm/tur.pdtb.tedm_train.rels'

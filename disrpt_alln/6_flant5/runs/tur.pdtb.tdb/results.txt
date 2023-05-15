@@ -1,0 +1,11 @@
+                           precision    recall  f1-score   support
+
+               Expansion.       0.00      0.00      0.00       0.0
+    Expansion.Conjunction       0.00      0.00      0.00       1.0
+Expansion.Level-of-detail       0.00      0.00      0.00       1.0
+               Temporal.A       0.00      0.00      0.00       0.0
+    Temporal.Asynchronous       0.00      0.00      0.00       4.0
+
+                 accuracy                           0.00       6.0
+                macro avg       0.00      0.00      0.00       6.0
+             weighted avg       0.00      0.00      0.00       6.0

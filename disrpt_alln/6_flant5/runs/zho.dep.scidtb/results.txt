@@ -1,0 +1,12 @@
+                precision    recall  f1-score   support
+
+             e       0.00      0.00      0.00         0
+ elab-addition       0.00      0.00      0.00         3
+    enablement       1.00      1.00      1.00         1
+         joint       1.00      1.00      1.00         2
+   progression       0.00      0.00      0.00         1
+progression of       0.00      0.00      0.00         0
+
+      accuracy                           0.43         7
+     macro avg       0.33      0.33      0.33         7
+  weighted avg       0.43      0.43      0.43         7

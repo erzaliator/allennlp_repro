@@ -1,0 +1,11 @@
+              precision    recall  f1-score   support
+
+       cause       0.00      0.00      0.00         1
+    contrast       1.00      1.00      1.00         3
+ elaboration       1.00      1.00      1.00         6
+    evidence       1.00      1.00      1.00         1
+     it is a       0.00      0.00      0.00         0
+
+    accuracy                           0.91        11
+   macro avg       0.60      0.60      0.60        11
+weighted avg       0.91      0.91      0.91        11

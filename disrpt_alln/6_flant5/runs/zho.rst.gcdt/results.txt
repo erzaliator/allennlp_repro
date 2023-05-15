@@ -1,0 +1,12 @@
+                          precision    recall  f1-score   support
+
+      context-background       1.00      1.00      1.00         1
+             elaboration       0.00      0.00      0.00         0
+   elaboration-attribute       0.00      0.00      0.00         1
+              joint-list       1.00      1.00      1.00         6
+     organization-prepar       0.00      0.00      0.00         0
+organization-preparation       0.00      0.00      0.00         1
+
+                accuracy                           0.78         9
+               macro avg       0.33      0.33      0.33         9
+            weighted avg       0.78      0.78      0.78         9

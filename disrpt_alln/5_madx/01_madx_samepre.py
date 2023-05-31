@@ -7,10 +7,13 @@ See how gains can be achieved via MTL using Mad-X language adn task adapters. Ru
 Usage: nohup python 01_madx.py --lang2_index=7 --cuda=7 > logs_runtime/runtime_7.out 2> logs_runtime/runtime_7.err &
 '''
 
+import pdb
+
 import wandb
 import torch
 import os
 import numpy as np
+import pandas as pd
 from copy import deepcopy
 
 
@@ -50,17 +53,17 @@ lang_list = [
     'deu.rst.pcc',
     'eng.pdtb.pdtb',
     'eng.rst.gum',
-    'eng.rst.rstdt',
+    'eng.rst.rstdt', #REDO
     'eng.sdrt.stac',
     'fas.rst.prstc',
-    'fra.sdrt.annodis',
-    'nld.rst.nldt',
-    'por.rst.cstn',
-    'rus.rst.rrt',
-    'spa.rst.rststb',
-    'spa.rst.sctb',
-    'tur.pdtb.tdb',
-    'zho.rst.sctb']  # 58.775940907492085 #0.18846153846153846
+    'fra.sdrt.annodis', #REDO
+    'nld.rst.nldt', #DONE maybe gains wont look realistic. but if the run never existed then how did the finetuning happen?
+    'por.rst.cstn', #DONE
+    'rus.rst.rrt', #DONE
+    'spa.rst.rststb', #DONE
+    'spa.rst.sctb', #DONE
+    'tur.pdtb.tdb', #DONE
+    'zho.rst.sctb'] #DONE
 
 adapter_lang_map = {
     'deu': 'de',
@@ -77,12 +80,12 @@ adapter_lang_map = {
 
 # model params
 BERT_MODEL = 'bert-base-multilingual-cased'
-batch_size1 = 32
-batch_size2 = 32
-epoch1 = 30
-epoch2 = 30
+batch_size1 = 50#32
+batch_size2 = 50#32
+epoch1 = 2#35
+epoch2 = 2#35
 lr = 1e-4
-early_stop = EarlyStoppingCallback(5, 2.0)
+early_stop = EarlyStoppingCallback(7, 2.0)
 model = None
 print('Running with params: BERT_MODEL=' + BERT_MODEL + ' lr=' + str(lr))
 
@@ -97,12 +100,12 @@ lang1 = adapter_lang_map[dataset1.split('.')[0]]
 experiment_name = 'Mad_checking'
 lrfunc = 'lrfunc=Adafactor_'+'lr='+str(lr)
 model_name = 'plm='+BERT_MODEL
-additional_info = 'CheckFullShot=v8'
+additional_info = 'CheckFullShot=v10'
 name = '_'.join([additional_info, 'pretrain', dataset1, lrfunc, model_name])
 
 
 # output data params
-MODEL_DIR = 'runs/full_shot/same_pretrain_lr1e-5/'+name
+MODEL_DIR = 'runs/full_shot/same_pretrain_lr1e-4/'+name
 print('-------------------------------------------------------------------')
 print('Lang1: ', dataset1)
 print('Saving run to (pretrain stage): ', MODEL_DIR)
@@ -169,7 +172,18 @@ model.active_adapters = Stack(lang, "disrpt")
 model.active_head = head_name
 lang = dataset1
 
+
 # print(model)
+# bert.encoder.layer.0.attention.output.dense.weight
+# bert.encoder.layer.0.attention.output.dense.bias
+# bert.encoder.layer.0.attention.output.LayerNorm.weight
+# bert.encoder.layer.0.attention.output.LayerNorm.bias
+# bert.encoder.layer.0.intermediate.dense.weight
+# bert.encoder.layer.0.intermediate.dense.bias
+# bert.encoder.layer.0.output.dense.weight
+# bert.encoder.layer.0.output.dense.bias
+# bert.encoder.layer.0.output.LayerNorm.weight
+# bert.encoder.layer.0.output.LayerNorm.bias
 
 # train setup
 
@@ -181,13 +195,14 @@ class CustomCallback(TrainerCallback):
         self._trainer = trainer
         self.best_acc = -1
 
+
     def on_epoch_end(self, args, state, control, **kwargs):
         if control.should_evaluate:
             global model, save_best_model_path, lang
             print('USING HEAD: ', model.active_head)
             control_copy = deepcopy(control)
             output_metrics = self._trainer.evaluate(eval_dataset=self._trainer.train_dataset, metric_key_prefix="train@"+lang)
-            print(output_metrics) #'train@spa.rst.sctb_accuracy@spa.rst.sctb': 0.3416856492027335
+            print(output_metrics)
             print('trying...', 'train@'+lang+'_accuracy@'+lang)
             acc = output_metrics['train@'+lang+'_accuracy@'+lang]
             if state.global_step < state.max_steps and self.best_acc<=acc:
@@ -195,6 +210,48 @@ class CustomCallback(TrainerCallback):
                 model.save_pretrained(save_best_model_path, from_pt=True)
                 self.best_acc = acc
             return control_copy
+
+class GradientNormCallback(TrainerCallback):
+    def __init__(self, model, layer_names, lang, trainingstage):
+        self.model = model
+        self.layer_names = layer_names
+        self.gradient_norms = {}
+
+    def on_step_end(self, args, state, control, logs=None, **kwargs):
+        pass
+        # Compute the L2 norm of gradients for each layer
+        # pdb.set_trace()
+
+        # for layer_name, layer_params in self.model.named_parameters():
+        #     if any(layer_name.startswith(prefix) for prefix in self.layer_names):
+        #         if layer_params.grad is not None:
+        #             grad_norm = torch.norm(layer_params.grad.data, p=2).item()
+        #             if layer_name not in self.gradient_norms:
+        #                 self.gradient_norms[layer_name] = []
+        #             self.gradient_norms[layer_name].append(grad_norm)
+        #         else:
+        #             if layer_name not in self.gradient_norms:
+        #                 self.gradient_norms[layer_name] = []
+
+    def on_epoch_end(self, args, state, control, **kwargs):
+        for layer_name, layer_params in self.model.named_parameters():
+            if any(layer_name.startswith(prefix) for prefix in self.layer_names):
+                if layer_params.grad is not None:
+                    grad_norm = torch.norm(layer_params.grad.data, p=2).item()
+                    if layer_name not in self.gradient_norms:
+                        self.gradient_norms[layer_name] = []
+                    self.gradient_norms[layer_name].append(grad_norm)
+                else:
+                    if layer_name not in self.gradient_norms:
+                        self.gradient_norms[layer_name] = []
+
+        epoch = state.epoch
+        # Save the gradient norms to separate CSV files for each layer with the epoch number
+        for layer_name, norms in self.gradient_norms.items():
+            df = pd.DataFrame(norms, columns=['Gradient Norm'])
+            filename = f'{layer_name}_e{epoch}_norm.csv'
+            filename = os.path.join(save_best_model_path_pretrain, filename)
+            df.to_csv(filename, index=False)
 
 # CM
 def compute_metrics(pred):
@@ -265,7 +322,11 @@ trainer = AdapterTrainer(
     compute_metrics=compute_metrics
 )
 
+layer_names = ['bert.encoder.layer.1', 'bert.encoder.layer.6', 'bert.encoder.layer.11', 'bert.pooler', 'heads.disrpt-deu-rst-pcc.1']
+grad_norm_callback_obj = GradientNormCallback(model, layer_names, lang, 'pretrain')
+
 trainer.add_callback(CustomCallback(trainer))
+trainer.add_callback(grad_norm_callback_obj)
 trainer.add_callback(early_stop)
 
 # Train
@@ -280,6 +341,9 @@ trainer.save_metrics("train_log", metrics)
 lang = dataset1
 trainer.evaluate(metric_key_prefix='test_'+lang,
                     eval_dataset=test_dataset1)
+
+
+exit(0)
 
 
 for dataset2 in lang_list:
@@ -298,7 +362,7 @@ for dataset2 in lang_list:
     name = '_'.join([additional_info, 'finetune', dataset1, dataset2, lrfunc, model_name])
 
     # output data params
-    MODEL_DIR = 'runs/full_shot/same_pretrain_lr1e-5/'+name
+    MODEL_DIR = 'runs/full_shot/same_pretrain_lr1e-4/'+name
     print('-------------------------------------------------------------------')
     print('Lang1: ', dataset1, '   Lang2: ', dataset2)
     print('Saving run to: ', MODEL_DIR)
